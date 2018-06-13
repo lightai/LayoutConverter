@@ -91,6 +91,3 @@ LayoutConverter支持android框架所有的veiw、widget。考虑到实际项目
 - $view: view对象
 - $value: view对象对应属性的值
 - valueClass属性：配置$value对象的class，不配置的话根据format属性去生成$value
-
-## 关于开放
-LayoutConverter还处于内测阶段，所以还没有开放，如果你感兴趣可以popo联系我。
