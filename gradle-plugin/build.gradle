@@ -1,0 +1,55 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.0.1'
+    compile project(':compiler')
+//    implementation "$rootProject.ext.compiler"
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDir 'src/main/groovy'
+        }
+
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
+
+// upload
+version = rootProject.ext.version
+group = rootProject.ext.group
+archivesBaseName = 'gradle-plugin'
+//repositories.mavenCentral()
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: "file:$project.rootDir.path/libs")
+    }
+}
+
+// publish
+apply plugin: 'maven-publish'
+task sourcesJar(type: Jar) {
+    classifier 'sources'
+    from sourceSets.main.allSource
+}
+artifacts {
+    archives sourcesJar
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId rootProject.ext.group
+            artifactId 'gradle-plugin'
+            version rootProject.ext.version
+            from components.java
+            artifact sourcesJar
+        }
+    }
+}

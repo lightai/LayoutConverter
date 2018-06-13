@@ -1,0 +1,55 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+sourceSets {
+    main {
+        java {
+            srcDirs += 'src/main/java'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+}
+
+// upload
+apply plugin: 'maven'
+uploadArchives{
+    repositories {
+        mavenDeployer {
+            pom.artifactId = 'annotations'
+            pom.groupId = rootProject.ext.group
+            pom.version = rootProject.ext.version
+
+            repository(url: rootProject.ext.mavenUrl) {
+                authentication(userName: rootProject.ext.mavenUserName, password: rootProject.ext.mavenPwd)
+            }
+        }
+    }
+}
+
+// publish
+apply plugin: 'maven-publish'
+task sourcesJar(type: Jar) {
+    classifier 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId rootProject.ext.group
+            artifactId 'annotations'
+            version rootProject.ext.version
+            from components.java
+            artifact sourcesJar
+        }
+    }
+}

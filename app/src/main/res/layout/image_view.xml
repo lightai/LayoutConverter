@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:src="@drawable/ic_launcher_background"
+    android:baseline="1dp"
+    android:baselineAlignBottom="true"
+    android:adjustViewBounds="true"
+    android:scaleType="center"
+    android:cropToPadding="true">
+</ImageView>

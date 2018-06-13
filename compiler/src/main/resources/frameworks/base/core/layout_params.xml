@@ -1,0 +1,9 @@
+<class>
+    <ViewGroup_Layout/>
+    <ViewGroup_MarginLayout parent="ViewGroup_Layout"/>
+    <RelativeLayout_Layout parent="ViewGroup_MarginLayout"/>
+    <FrameLayout_Layout parent="ViewGroup_MarginLayout"/>
+    <LinearLayout_Layout parent="ViewGroup_MarginLayout"/>
+    <AbsoluteLayout_Layout parent="ViewGroup_MarginLayout"/>
+    <GridLayout_Layout parent="ViewGroup_MarginLayout"/>
+</class>

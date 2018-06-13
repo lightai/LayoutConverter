@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+    android:textSelectHandle="@drawable/text_select_handle_middle"
+    android:textSelectHandleLeft="@drawable/text_select_handle_left"
+    android:textSelectHandleRight="@drawable/text_select_handle_right"/>

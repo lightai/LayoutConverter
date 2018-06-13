@@ -1,0 +1,27 @@
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+# Idea files
+*.iml
+/*/*.iml
+.idea
+/*/.idea/
+
+# Gradle files
+.gradle
+local.properties
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Log Files
+*.log
+
+# Generated files
+bin/
+gen/
+
+# Java class files
+*.class
+

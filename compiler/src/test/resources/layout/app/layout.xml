@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/activity_account_bind"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <com.netease.moneykeeper.ui.common.SimpleActionBar
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:actionBarTitle="解除帐号绑定"
+        app:defaultBack="true" />
+
+    <TextView
+        android:id="@+id/hint"
+        style="@style/text_035"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/bg_color"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:text="请输入网易邮箱密码" />
+
+    <!-- 帐号输入框 -->
+    <LinearLayout
+        android:id="@+id/ll_account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/bg_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <EditText
+            android:id="@+id/login_account"
+            style="@style/Widget_EditText_NoBg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_login_account"
+            android:drawablePadding="9dp"
+            android:hint="@string/label_account"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/text_024"
+            android:textColorHint="@color/text_045"
+            android:textSize="@dimen/text_045" />
+
+        <ImageButton
+            android:id="@+id/login_account_clear"
+            style="@style/Widget_ImageButton_Clear"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <View
+        style="@style/Widget_Line_Gray"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 密码输入框 -->
+            <LinearLayout
+                android:id="@+id/ll_password"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@color/bg_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+
+                <EditText
+                    android:id="@+id/login_password"
+                    style="@style/Widget_EditText_NoBg"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_login_password"
+                    android:drawablePadding="9dp"
+                    android:hint="@string/label_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColor="@color/color_text_normal"
+                    android:textColorHint="@color/text_045"
+                    android:textSize="@dimen/text_024" />
+
+                <ImageButton
+                    android:id="@+id/login_password_clear"
+                    style="@style/Widget_ImageButton_Clear"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/Widget_Line_Gray"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin" />
+
+            <!-- 登录按钮 -->
+            <Button
+                android:id="@+id/remove_button"
+                style="@style/Widget.Button.Red"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="40dp"
+                android:text="解除绑定" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+                <!-- 忘记密码 -->
+                <TextView
+                    android:id="@+id/tv_forget_password"
+                    style="@style/text_035"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/label_forget_password" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:background="@color/list_view_divider" />
+                <!-- 注册 -->
+                <TextView
+                    android:id="@+id/tv_register"
+                    style="@style/text_035"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|left"
+                    android:text="注册网易帐号" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 提示 -->
+        <LinearLayout
+            android:id="@+id/ll_account_hint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_white"
+            android:orientation="vertical"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</LinearLayout>

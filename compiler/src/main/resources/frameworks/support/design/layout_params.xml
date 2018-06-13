@@ -1,0 +1,5 @@
+<class>
+    <CoordinatorLayout_Layout parent="ViewGroup_MarginLayout"/>
+    <AppBarLayout_Layout parent="LinearLayout_Layout"/>
+    <CollapsingToolbarLayout_Layout parent="FrameLayout_Layout"/>
+</class>

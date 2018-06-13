@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:text="text"
+    android:textColor="@android:color/background_light"
+    android:textColorHighlight="@android:color/background_light"
+    android:textColorHint="@android:color/holo_blue_bright"
+    android:textColorLink="@android:color/holo_blue_bright"
+
+    android:drawableLeft="@android:drawable/arrow_down_float"
+    android:drawablePadding="12dp"
+    android:textCursorDrawable="@android:drawable/alert_dark_frame"
+
+    android:autoLink="web"
+    android:contentDescription="desc"
+    android:textStyle="bold"
+    android:typeface="sans"
+    android:imeOptions="actionGo"
+    android:inputType="text"
+
+    android:lines="3"
+    android:maxLines="3"
+
+    android:duplicateParentState="true"
+    android:elegantTextHeight="true"
+    android:hint="hint"
+
+    android:textDirection="inherit"
+    android:textIsSelectable="true"
+
+    android:textAppearance="@style/TextAppearance.AppCompat"
+    android:textSize="10dp"
+    android:textScaleX="0.8"/>

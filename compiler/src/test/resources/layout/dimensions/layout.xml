@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1mm"
+    android:layout_marginTop="1pt"
+    android:layout_marginBottom="@android:dimen/app_icon_size"
+    android:paddingTop="1px"
+    android:paddingBottom="1in"
+    android:paddingRight="1sp">
+</View>

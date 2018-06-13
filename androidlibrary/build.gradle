@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+
+sourceSets {
+    main {
+        java {
+            srcDirs += 'src/main/java'
+        }
+    }
+}
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '27.0.2'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
+
+apply plugin: 'maven'
+uploadArchives{
+    repositories {
+        mavenDeployer {
+            pom.artifactId = 'androidLibrary'
+            pom.groupId = rootProject.ext.group
+            pom.version = rootProject.ext.version
+
+            repository(url: rootProject.ext.mavenUrl) {
+                authentication(userName: rootProject.ext.mavenUserName, password: rootProject.ext.mavenPwd)
+            }
+        }
+    }
+}
+
+// publish
+apply plugin: 'maven-publish'
+task sourcesJar(type: Jar) {
+    classifier 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+publishToMavenLocal.dependsOn assemble
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId rootProject.ext.group
+            artifactId 'androidLibrary'
+            version rootProject.ext.version
+            artifact 'build/outputs/aar/androidlibrary-debug.aar'
+        }
+    }
+}
